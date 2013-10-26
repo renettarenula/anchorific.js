@@ -1,0 +1,32 @@
+{
+  "name": "anchorific",
+  "version": "0.1.0",
+  "description": "Automatically generate anchored headings and nested navigations based on header tags",
+  "main": "anchorific.js",
+  "scripts": {
+    "test": "qunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/renettarenula/anchorific"
+  },
+  "keywords": [
+    "jquery",
+    "plugins",
+    "anchor",
+    "links",
+    "scrollspy"
+  ],
+  "author": "Ren Aysha",
+  "license": "MIT ",
+  "bugs": {
+    "url": "https://github.com/renettarenula/anchorific/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-qunit": "0.3.0"
+  }
+}
