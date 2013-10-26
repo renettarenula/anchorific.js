@@ -1,7 +1,7 @@
 # Anchorific.js
 
 Anchorific automatically generates anchored headings and nested navigations based on header tags.
-Project page and demo here: [renaysha.me/anchorific](http://renaysha.me/anchorific)
+Project page and demo here: [renaysha.me/anchorific-js](http://renaysha.me/anchorific-js)
 
 ## Getting Started
 ### HTML Structure
