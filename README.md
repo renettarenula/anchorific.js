@@ -1,6 +1,6 @@
 # Anchorific.js
 
-Anchorific automatically generates anchored headings and nested navigations based on header tags. My intention is for it to be used in single-page project documentation.
+Anchorific is a jQuery plugin that automatically generates anchored headings and nested navigations based on header tags. My intention is for it to be used in single-page project documentation.
 Project page and demo here: [renaysha.me/anchorific-js](http://renaysha.me/anchorific-js)
 
 ## Getting Started
@@ -83,3 +83,21 @@ Just add an element with class top. You can use other class names but it should 
 Remember to add display: none; to the .top styling. It should not be visible when the page first load.
 
 The speed of the scrolling effect can be adjusted by specifying in the options above.
+
+## Build
+
+Anchorific.js uses Grunt CLI via NodeJS for linting, providing minified of production file, and executing the unit tests of the plugin. Check out the guide on [Grunt's getting started page](http://gruntjs.com/getting-started) to install it.
+
+### Setup
+
+Once you have grunt CLI installed, CD to the project folder and type:
+
+``` bash
+$ npm install
+```
+
+Execute lint, minification, and unit tests:
+
+``` bash
+$ grunt
+```
