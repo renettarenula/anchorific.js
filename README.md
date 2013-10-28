@@ -101,3 +101,7 @@ Execute lint, minification, and unit tests:
 ``` bash
 $ grunt
 ```
+
+## License
+
+[MIT License](http://opensource.org/licenses/MIT)
