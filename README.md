@@ -23,18 +23,18 @@ Based on the HTML markup above, the plugin will generate nested navigations like
 
 ``` html
 <ul>
-    <li data-tag="1">The Lannisters
+    <li data-tag="1"><a href="#the-lannisters">The Lannisters</a>
         <ul>
-             <li data-tag="2">Tywin Lannister</li>
-             <li data-tag="2">Cersei Lannister
+             <li data-tag="2"><a href="#tywin-lannister">Tywin Lannister</a></li>
+             <li data-tag="2"><a href="#cersei-lannister">Cersei Lannister</a>
                 <ul>
-                    <li data-tag="3">Joffrey Baratheon</li>
-                    <li data-tag="3">Myrcella Baratheon</li>
-                    <li data-tag="3">Tommen Baratheon</li>
+                    <li data-tag="3"><a href="#joffrey-baratheon">Joffrey Baratheon</a></li>
+                    <li data-tag="3"><a href="#myrcella-baratheon">Myrcella Baratheon</a></li>
+                    <li data-tag="3"><a href="#tommen-baratheon">Tommen Baratheon</a></li>
                 </ul>
              </li>
-             <li data-tag="2">Jaime Lannister</li>
-             <li data-tag="2">Tyrion Lannister</li>
+             <li data-tag="2"><a href="#jaime-lannister">Jaime Lannister</a></li>
+             <li data-tag="2"><a href="#tyrion-lannister">Tyrion Lannister</a></li>
         </ul>
     </li>
 </ul>
