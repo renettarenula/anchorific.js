@@ -70,7 +70,7 @@ By default, the plugin will append the unordered list under an element with clas
 
 ### CSS
 
-The anchored navigation can be styled easily. Below are the selectors you can use in order to style the generated navigation. 
+The nested navigation can be styled easily. Below are the selectors you can use in order to style the generated navigation. 
 
 ``` css
 .anchorific {}
@@ -117,9 +117,9 @@ Just add an element with class top. You can use other class names but it should 
 <a href="#top" class="top">Scroll to top</a>
 ```
 
-Remember to add display: none; to the .top styling. It should not be visible when the page first load.
-
 The speed of the scrolling effect can be adjusted by specifying it in the options above.
+
+**Note: remember to add display: none; to the .top styling. It should not be visible when the page first load.**
 
 ## Build
 
