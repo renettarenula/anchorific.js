@@ -121,7 +121,7 @@ if ( typeof Object.create !== 'function' ) {
 		},
 
 		back: function() {
-			var self = this, body = $( document.body ), top = $( self.opt.top );
+			var self = this, body = $( 'body, html' ), top = $( self.opt.top );
 
 			top.on( 'click', function( e ) {
 				e.preventDefault();
