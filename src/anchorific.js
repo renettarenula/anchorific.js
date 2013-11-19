@@ -45,8 +45,12 @@ if ( typeof Object.create !== 'function' ) {
 
 			self.headers = self.$elem.find( 'h1, h2, h3, h4, h5, h6' );
 			self.previous = 0;
-			self.first = parseInt( self.headers.prop( 'nodeName' ).substring( 1 ), null );
 
+			// Fix bug #1
+			if ( self.headers.length !== 0 ) {
+				self.first = parseInt( self.headers.prop( 'nodeName' ).substring( 1 ), null );
+			}
+			
 			self.build();
 		},
 
