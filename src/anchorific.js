@@ -61,7 +61,8 @@ if ( typeof Object.create !== 'function' ) {
 			anchorText: '#', // prepended or appended to anchor headings
 			top: '.top', // back to top button or link class
 			spy: true, // scroll spy
-			position: 'append' // position of anchor text
+			position: 'append', // position of anchor text
+            spyOffset: !0 // specify heading offset for spy scrolling
 		},
 		
 		build: function() {
@@ -178,7 +179,7 @@ if ( typeof Object.create !== 'function' ) {
 				self.top( this );
 				// get all the header on top of the viewport
 				current = self.headers.map( function( e ) {
-					if ( ( $( this ).offset().top - $( window ).scrollTop() ) < 10 ) {
+					if ( ( $( this ).offset().top - $( window ).scrollTop() ) < self.opt.spyOffset ) {
 						return this;
 					}
 				});
