@@ -13,7 +13,13 @@ module.exports = function( grunt ) {
       }
     },
     qunit: {
-      files: ['tests/**/*.html']
+      all: {
+        options: {
+          urls: ['1.10.1', '1.11.1', '2.1.1'].map(function(version) {
+            return 'http://localhost:<%= connect.server.options.port %>/tests/index.html?jquery=' + version;
+          })
+        }
+      }
     },
     jshint: {
       files: ['gruntfile.js', 'src/**/*.js'],
@@ -24,6 +30,13 @@ module.exports = function( grunt ) {
           module: true
         }
       }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 8085 // This is a random port, feel free to change it.
+        }
+      }
     }
   });
 
@@ -31,8 +44,9 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'uglify', 'qunit']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'connect', 'qunit']);
 
 };

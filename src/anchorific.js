@@ -187,7 +187,7 @@ if ( typeof Object.create !== 'function' ) {
 
 				if ( current && current.length ) {
 					// get all li tag that contains href of # ( all the parents )
-					list = $( 'li:has("a[href="#' + current.attr( 'id' ) + '"]")' );
+					list = $( 'li:has(a[href="#' + current.attr( 'id' ) + '"])' );
 
 					if ( prev !== undefined ) {
 						prev.removeClass( 'active' );
