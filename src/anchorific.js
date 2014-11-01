@@ -62,14 +62,14 @@ if ( typeof Object.create !== 'function' ) {
 			top: '.top', // back to top button or link class
 			spy: true, // scroll spy
 			position: 'append', // position of anchor text
-			spyOffset: !0 // specify heading offset for spy scrolling
+			spyOffset: !0 // specify heading offset for spy scrolling (px as numbers eg.90 || percentage as string eg.'90%')
 		},
 		
 		build: function() {
 			var self = this, obj, navigations = function() {};
 			// when navigation configuration is set
 			if ( self.opt.navigation ) {
-				$( self.opt.navigation ).append( '<ul />' );
+				$( self.opt.navigation ).prepend( '<ul />' );
 				self.previous = $( self.opt.navigation ).find( 'ul' ).last();
 				navigations = function( obj ) {
 					return self.navigations( obj );
@@ -179,7 +179,12 @@ if ( typeof Object.create !== 'function' ) {
 				self.top( this );
 				// get all the header on top of the viewport
 				current = self.headers.map( function( e ) {
-					if ( ( $( this ).offset().top - $( window ).scrollTop() ) < self.opt.spyOffset ) {
+					// check if spyOffset is a percentage value and calculate offset
+					var spyOffsetCalculated = self.opt.spyOffset;
+					if ( self.opt.spyOffset.indexOf("%") >= 0 ) {
+						spyOffsetCalculated = parseFloat(self.opt.spyOffset) * $ ( window ).height() / 100;
+					}
+					if ( ( $( this ).offset().top - $( window ).scrollTop() ) < spyOffsetCalculated ) {
 						return this;
 					}
 				});
