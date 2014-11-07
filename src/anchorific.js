@@ -43,7 +43,7 @@ if ( typeof Object.create !== 'function' ) {
 
 			self.opt = $.extend( {},  this.opt, options );
 
-			self.headers = self.$elem.find( 'h1, h2, h3, h4, h5, h6' );
+			self.headers = self.$elem.find( self.opt.headers );
 			self.previous = 0;
 
 			// Fix bug #1
@@ -65,7 +65,8 @@ if ( typeof Object.create !== 'function' ) {
 			spyOffset: !0, // sets an offset (as string if percentage) for highlighting sections
 			throttled: true, // throttles window bound functions such as scroll and resize for performance
 			throttleDelay: 50, // the time interval in which throttled functions are fired (in miliseconds)
-			requireScrollPastTarget: true // checks if the top of the window is past the target content element for highlighting, and removes highlight if scrolled up past the target content element
+			requireScrollPastTarget: true, // checks if the top of the window is past the target content element for highlighting, and removes highlight if scrolled up past the target content element
+			headers: 'h1, h2, h3, h4, h5, h6' //defines the range of headers to be parsed for the table of contents
 		},
 		
 		build: function() {
