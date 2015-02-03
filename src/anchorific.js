@@ -34,6 +34,9 @@ if ( typeof Object.create !== 'function' ) {
 	"use strict";
 
 	var Anchorific = {
+		
+		// array of unique slug names
+        	names: [],
 
 		init: function( options, elem ) {
 			var self = this;
@@ -78,8 +81,8 @@ if ( typeof Object.create !== 'function' ) {
 
 			for( var i = 0; i < self.headers.length; i++ ) {
 				obj = self.headers.eq( i );
-				navigations( obj );
 				self.anchor( obj );
+				navigations( obj );
 			}
 
 			if ( self.opt.spy )
@@ -139,6 +142,13 @@ if ( typeof Object.create !== 'function' ) {
 				obj.attr( 'id', name );
 
 			id = obj.attr( 'id' );
+			
+			while ($.inArray(id, self.names) >= 0){
+		                id += "_";
+		            }
+		
+		        obj.attr( 'id', id );
+		        self.names.push(id);
 
 			anchor = $( '<a />' ).attr( 'href', '#' + id ).html( text ).addClass( klass );
 
