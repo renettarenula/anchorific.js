@@ -43,19 +43,20 @@ if ( typeof Object.create !== 'function' ) {
 
 			self.opt = $.extend( {},  this.opt, options );
 
-			self.headers = self.$elem.find( 'h1, h2, h3, h4, h5, h6' );
+			self.headers = self.$elem.find( self.opt.headers );
 			self.previous = 0;
 
 			// Fix bug #1
 			if ( self.headers.length !== 0 ) {
 				self.first = parseInt( self.headers.prop( 'nodeName' ).substring( 1 ), null );
 			}
-			
+
 			self.build();
 		},
 
 		opt: {
 			navigation: '.anchorific', // position of navigation
+			headers: 'h1, h2, h3, h4, h5, h6', // custom headers selector
 			speed: 200, // speed of sliding back to top
 			anchorClass: 'anchor', // class of anchor links
 			anchorText: '#', // prepended or appended to anchor headings
@@ -64,7 +65,7 @@ if ( typeof Object.create !== 'function' ) {
 			position: 'append', // position of anchor text
 			spyOffset: !0 // specify heading offset for spy scrolling
 		},
-		
+
 		build: function() {
 			var self = this, obj, navigations = function() {};
 			// when navigation configuration is set
@@ -85,10 +86,10 @@ if ( typeof Object.create !== 'function' ) {
 			if ( self.opt.spy )
 				self.spy();
 
-			if ( self.opt.top ) 
+			if ( self.opt.top )
 				self.back();
 		},
-		
+
 		navigations: function( obj ) {
 			var self = this, link, list, which, name = self.name( obj );
 
@@ -96,7 +97,7 @@ if ( typeof Object.create !== 'function' ) {
 				name = obj.attr( 'id' );
 
 			link = $( '<a />' ).attr( 'href', '#' + name ).text( obj.text() );
-			list = $( '<li />' ).append( link ); 
+			list = $( '<li />' ).append( link );
 
 			which = parseInt( obj.prop( 'nodeName' ).substring( 1 ), null );
 			list.attr( 'data-tag', which );
