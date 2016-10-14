@@ -6,7 +6,7 @@ Project page and demo here: [renaysha.me/anchorific-js](http://renaysha.me/ancho
 ## Getting Started
 ### HTML Structure
 
-You should not skip a level when structuring header tags. H1 should be followed by H2, H2 should be followed by H3 and so on. Anchorific relies heavily on this particular structure when generating the anchor navigation. 
+You should not skip a level when structuring header tags. H1 should be followed by H2, H2 should be followed by H3 and so on. Anchorific relies heavily on this particular structure when generating the anchor navigation.
 
 ``` html
 <h1>The Lannisters</h1>
@@ -70,7 +70,7 @@ By default, the plugin will append the unordered list under an element with clas
 
 ### CSS
 
-The nested navigation can be styled easily. Below are the selectors you can use in order to style the generated navigation. 
+The nested navigation can be styled easily. Below are the selectors you can use in order to style the generated navigation.
 
 ``` css
 .anchorific {}
@@ -97,7 +97,8 @@ You can call the plugin function with any selector you want as long as it adhere
 
 ``` javascript
 $('.content').anchorific({
-    navigation: '.anchorific', // position of navigation
+  navigation: '.anchorific', // position of navigation
+  headers: 'h1, h2, h3, h4, h5, h6', // headers that you wish to target
 	speed: 200, // speed of sliding back to top
 	anchorClass: 'anchor', // class of anchor links
 	anchorText: '#', // prepended or appended to anchor headings
