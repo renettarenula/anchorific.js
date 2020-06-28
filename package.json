@@ -4,7 +4,7 @@
   "description": "Automatically generate anchored headings and nested navigations based on header tags",
   "main": "anchorific.js",
   "scripts": {
-    "test": "qunit"
+    "test": "echo \"No test specified\""
   },
   "repository": {
     "type": "git",
