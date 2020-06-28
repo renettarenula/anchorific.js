@@ -15,7 +15,9 @@
     "plugins",
     "anchor",
     "links",
-    "scrollspy"
+    "scrollspy",
+    "jquery-plugin",
+    "ecosystem:jquery"
   ],
   "author": "Ren Aysha",
   "license": "MIT ",
