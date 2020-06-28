@@ -19,7 +19,7 @@
     "jquery-plugin",
     "ecosystem:jquery"
   ],
-  "author": "Ren Aysha",
+  "author": "renettarenula <ren.aysha@gmail.com>",
   "license": "MIT ",
   "bugs": {
     "url": "https://github.com/renettarenula/anchorific/issues"
