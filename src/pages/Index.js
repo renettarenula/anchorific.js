@@ -34,6 +34,7 @@ const H3 = styled.h3`
 const P = styled.p`
   line-height: 1.5;
   margin-bottom: 30px;
+  font-weight: 300;
 `;
 
 const A = styled.a`
@@ -63,9 +64,9 @@ const Index = () => {
           <code className="language-bash">npm install --save anchorific</code>
         </pre>
         <P>
-          For a guide on how to using jQuery plugins with npm, check out:{" "}
+          For a guide on how to using jQuery plugins with npm, check out{" "}
           <A href="https://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm">
-            https://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm
+            this blog by NPM.
           </A>
         </P>
         <P>

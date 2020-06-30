@@ -31,6 +31,7 @@ const Layout = ({ children }) => {
             max-width: 850px;
             margin: auto;
             font-family: "Lato", sans-serif;
+            font-size: 1.15rem;
           }
 
           pre[class*="language-"] {
