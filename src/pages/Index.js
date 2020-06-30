@@ -33,7 +33,7 @@ const H3 = styled.h3`
 
 const P = styled.p`
   line-height: 1.5;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-weight: 300;
 `;
 
