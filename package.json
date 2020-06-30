@@ -1,0 +1,49 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/runtime": "^7.10.1",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@svgr/parcel-plugin-svgr": "^5.4.0",
+    "apollo-boost": "^0.4.9",
+    "apollo-client": "^2.6.10",
+    "apollo-link-schema": "^1.2.5",
+    "babel-plugin-emotion": "^10.0.33",
+    "emotion-reset": "^2.0.7",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.3",
+    "graphql-tools": "^6.0.1",
+    "ichigoo": "^1.0.0",
+    "react": "^16.13.1",
+    "react-apollo": "^3.1.5",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.9.4",
+    "async": "^3.2.0",
+    "babel-plugin-jsx-pragmatic": "^1.0.2",
+    "babel-plugin-root-import": "^6.5.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "gh-pages": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "ichigoo build && gh-pages -d dist -b gh-pages",
+    "build": "NODE_ENV=production ichigoo build"
+  },
+  "author": "Aysha Anggraini",
+  "license": "ISC"
+}
