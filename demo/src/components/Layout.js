@@ -1,14 +1,16 @@
 // src/components/Layout.js
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { Global, css } from "@emotion/core";
 import Logo from "~/src/assets/Logo.svg";
 import emotionReset from "emotion-reset";
+import Menu from "~src/assets/Menu.svg";
+import Sidebar from "./Sidebar.js";
 
 const Wrapper = styled.div`
   margin: auto;
   max-width: 900px;
+  position: relative;
 `;
 
 const Header = styled.div`
@@ -16,7 +18,17 @@ const Header = styled.div`
   text-align: center;
 `;
 
+const MenuItem = styled.button`
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+`;
+
 const Layout = ({ children }) => {
+  const [showNav, setShowNav] = useState(false);
+
   return (
     <div>
       <Global
@@ -39,7 +51,22 @@ const Layout = ({ children }) => {
           }
         `}
       />
+      <Sidebar
+        show={showNav}
+        triggerClose={() => {
+          setShowNav(false);
+        }}
+      />
       <Wrapper>
+        <MenuItem>
+          <Menu
+            width="20px"
+            height="20px"
+            onClick={() => {
+              setShowNav((prevState) => !prevState);
+            }}
+          />
+        </MenuItem>
         <Header>
           <Logo width="300px" />
         </Header>
