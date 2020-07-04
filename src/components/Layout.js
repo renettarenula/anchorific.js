@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import { Global, css } from "@emotion/core";
-import Logo from "../assets/Logo.svg";
+import Logo from "~/src/assets/Logo.svg";
 import emotionReset from "emotion-reset";
 
 const Wrapper = styled.div`
@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
       />
       <Wrapper>
         <Header>
-          <Logo />
+          <Logo width="300px" />
         </Header>
         <main>{children}</main>
       </Wrapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>my</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="my" fill-rule="nonzero">
+            <polygon id="Shape" fill="#CC0001" points="0 0 640 0 640 480 0 480"></polygon>
+            <polygon id="a" fill="#FFFFFF" points="0 445.8 640 445.8 640 480 0 480"></polygon>
+            <g id="a-link" transform="translate(0.000000, 376.400000)" fill="#FFFFFF">
+                <polygon id="a" points="0 0.8 640 0.8 640 35 0 35"></polygon>
+            </g>
+            <g id="a-link" transform="translate(0.000000, 307.800000)" fill="#FFFFFF">
+                <polygon id="a" points="0 0.8 640 0.8 640 35 0 35"></polygon>
+            </g>
+            <g id="a-link" transform="translate(0.000000, 239.200000)" fill="#FFFFFF">
+                <polygon id="a" points="0 0.8 640 0.8 640 35 0 35"></polygon>
+            </g>
+            <g id="a-link" transform="translate(0.000000, 170.700000)" fill="#FFFFFF">
+                <polygon id="a" points="0 0.8 640 0.8 640 35 0 35"></polygon>
+            </g>
+            <g id="a-link" transform="translate(0.000000, 102.000000)" fill="#FFFFFF">
+                <polygon id="a" points="0 0.8 640 0.8 640 35 0 35"></polygon>
+            </g>
+            <g id="a-link" transform="translate(0.000000, 33.500000)" fill="#FFFFFF">
+                <polygon id="a" points="0 0.8 640 0.8 640 35 0 35"></polygon>
+            </g>
+            <polygon id="Shape" fill="#010066" points="0 0 372.6 0 372.6 274.3 0 274.3"></polygon>
+            <g id="Group" transform="translate(60.000000, 48.000000)" fill="#FFCC00">
+                <path d="M89.7,0.5 C40.7,0.5 0.8,40.2 0.8,89.1 C0.852983606,112.651243 10.2595227,135.216834 26.9502734,151.83257 C43.641024,168.448306 66.2487575,177.753103 89.8,177.7 C106.811468,177.732773 123.473548,172.872999 137.8,163.7 C129.493343,166.524764 120.773704,167.94424 112,167.9 C68.5,167.9 33.2,132.7 33.2,89.4 C33.2127739,63.6200875 45.8508601,39.4809488 67.0303792,24.7829209 C88.2098983,10.084893 115.24517,6.69176708 139.4,15.7 C124.722601,5.78462367 107.412725,0.490657493 89.7,0.5 Z" id="Shape"></path>
+                <polygon id="Shape" points="237.1 135.2 199.7 115.7 210.7 155.7 185.7 122.2 177.9 162.9 170.2 122.2 145.1 155.6 156.3 115.6 118.7 135.1 146.7 103.8 104.2 105.4 143.2 89.1 104.2 72.6 146.7 74.3 118.9 43 156.3 62.5 145.3 22.5 170.3 56 178.1 15.3 185.8 56 210.9 22.7 199.7 62.6 237.3 43.2 209.3 74.4 251.8 72.8 212.8 89.2 251.8 105.7 209.3 103.9"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
