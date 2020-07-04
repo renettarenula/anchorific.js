@@ -17,6 +17,12 @@
         "labelFormat": "[filename]-[local]"
       }
     ],
+    [
+      "inline-react-svg",
+      {
+        "svgo": true
+      }
+    ],
     "babel-plugin-root-import",
     "@babel/transform-runtime"
   ]
