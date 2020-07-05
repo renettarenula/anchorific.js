@@ -45,10 +45,11 @@ const P = styled.p`
 `;
 
 const A = styled.a`
-  color: #42a7ff;
+  color: #badeff;
+  text-decoration: none;
 
   &:hover {
-    color: #7cb8ec;
+    text-decoration: underline;
   }
 `;
 
