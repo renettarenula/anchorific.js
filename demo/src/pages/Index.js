@@ -35,6 +35,7 @@ const H2 = styled.h2`
   font-size: 1.6rem;
   letter-spacing: 2px;
   margin-bottom: 20px;
+  line-height: 1.5;
 `;
 
 const H3 = styled.h3`
@@ -42,6 +43,7 @@ const H3 = styled.h3`
   font-size: 1.3rem;
   letter-spacing: 2px;
   margin-bottom: 20px;
+  line-height: 1.5;
 `;
 
 const P = styled.p`
