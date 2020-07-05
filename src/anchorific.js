@@ -63,14 +63,18 @@ if ( typeof Object.create !== 'function' ) {
 			top: '.top', // back to top button or link class
 			spy: true, // scroll spy
 			position: 'append', // position of anchor text
-			spyOffset: !0 // specify heading offset for spy scrolling
+			spyOffset: !0, // sets an offset (as string if percentage) for highlighting sections
+			throttled: true, // throttles window bound functions such as scroll and resize for performance
+			throttleDelay: 50, // the time interval in which throttled functions are fired (in miliseconds)
+			requireScrollPastTarget: true, // checks if the top of the window is past the target content element for highlighting, and removes highlight if scrolled up past the target content element
+			headers: 'h1, h2, h3, h4, h5, h6' //defines the range of headers to be parsed for the table of contents
 		},
 
 		build: function() {
 			var self = this, obj, navigations = function() {};
 			// when navigation configuration is set
 			if ( self.opt.navigation ) {
-				$( self.opt.navigation ).append( '<ul />' );
+				$( self.opt.navigation ).prepend( '<ul />' );
 				self.previous = $( self.opt.navigation ).find( 'ul' ).last();
 				navigations = function( obj ) {
 					return self.navigations( obj );
@@ -174,31 +178,88 @@ if ( typeof Object.create !== 'function' ) {
 
 		spy: function() {
 			var self = this, previous, current, list, top, prev;
+            var scrollTimeout;
+            var resizeTimeout;
+            var spyOffsetCalculated;
+            var targetPastScroll;
+            var calculateSpyOffset;
+            if ( self.opt.spyOffset.indexOf("%") >= 0) {
+                        calculateSpyOffset = function() {
+                            self.opt.spyOffset = parseFloat(self.opt.spyOffset) * $ ( window ).height() / 100;
+                        }();
+            }
+            var spyFunction = function( e ) {
+                // show links back to top
+                self.top( this );
+                // get all the header on top of the viewport
+                current = self.headers.map( function( e ) {
+                    if ( ( $( this ).offset().top - $( window ).scrollTop() ) < self.opt.spyOffset ) {
+                        return this;
+                    }
+                });
+                // get only the latest header on the viewport
+                current = $( current ).eq( current.length - 1 );
 
-			$( window ).scroll( function( e ) {
-				// show links back to top
-				self.top( this );
-				// get all the header on top of the viewport
-				current = self.headers.map( function( e ) {
-					if ( ( $( this ).offset().top - $( window ).scrollTop() ) < self.opt.spyOffset ) {
-						return this;
-					}
-				});
-				// get only the latest header on the viewport
-				current = $( current ).eq( current.length - 1 );
+                if ( current && current.length ) {
+                    // get all li tag that contains href of # ( all the parents )
+                    list = $( 'li:has(a[href="#' + current.attr( 'id' ) + '"])' );
+                    
+                    // check if window position is past the top of the target element if set in options, otherwise return true
+                    if ( $( window ).scrollTop() >= self.$elem.offset().top || !self.opt.requireScrollPastTarget ) {
+                        targetPastScroll = true;
+                    } else {
+                        targetPastScroll = false;
+                    }
+                    
+                    self.$elem.offset().top
+                    
+                    if ( prev !== undefined ) {
+                        prev.removeClass( 'active' );
+                    }
+                    if ( targetPastScroll ) {
+                        list.addClass( 'active' );
+                    }
+                    prev = list;
+                }
+			};
+            
+            // limit a function to only firing once every XX ms, from http://blog.pengoworks.com/index.cfm/2011/8/18/Issues-with-the-throttle-function-in-Underscorejs-and-my-throttle-fixes, MIT/GPL2 by Dan G. Switzer, II
+            var throttle = function (fn, delay, trail){
+              delay || (delay = 100);
+              var last = 0, timeout, args, context, offset = (trail === false) ? 0 : delay;
+              return function (){
+                // we subtract the delay to prevent double executions
+                var now = +new Date, elapsed = (now - last - offset);
+                args=arguments, context=this;
 
-				if ( current && current.length ) {
-					// get all li tag that contains href of # ( all the parents )
-					list = $( 'li:has(a[href="#' + current.attr( 'id' ) + '"])' );
+                function exec(){
+                  // remove any existing delayed execution
+                  timeout && (timeout = clearTimeout(timeout));
+                  fn.apply(context, args);
+                  last = now;
+                }
 
-					if ( prev !== undefined ) {
-						prev.removeClass( 'active' );
-					}
+                // execute the function now
+                if( elapsed > delay ) exec();
+                // add delayed execution (this could execute a few ms later than the delay)
+                else if( !timeout && trail !== false ) timeout = setTimeout(exec, delay);
+              };
+            };
+            
+            // check if throttled, and wrap functions
+            if(self.opt.throttled){
+                if ( calculateSpyOffset !== undefined ) {
+                    calculateSpyOffset = throttle(calculateSpyOffset, self.opt.throttleDelay, true);
+                }
+                spyFunction = throttle(spyFunction, self.opt.throttleDelay, true);
+            }
+            
+            //bind the functions, throttled or not
+            if ( calculateSpyOffset !== undefined ) {
+                $(window).resize(calculateSpyOffset);
+            }
+            $(window).scroll(spyFunction);            
 
-					list.addClass( 'active' );
-					prev = list;
-				}
-			});
 		}
 	};
 
