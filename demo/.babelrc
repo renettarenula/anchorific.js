@@ -1,0 +1,29 @@
+{
+  "presets": ["@babel/preset-env", "@babel/react"],
+  "plugins": [
+    "transform-inline-environment-variables",
+    [
+      "babel-plugin-jsx-pragmatic",
+      { "export": "jsx", "module": "@emotion/core", "import": "___EmotionJSX" }
+    ],
+    [
+      "@babel/plugin-transform-react-jsx",
+      { "pragma": "___EmotionJSX", "pragmaFrag": "React.Fragment" }
+    ],
+    [
+      "emotion",
+      {
+        "autoLabel": true,
+        "labelFormat": "[filename]-[local]"
+      }
+    ],
+    [
+      "inline-react-svg",
+      {
+        "svgo": true
+      }
+    ],
+    "babel-plugin-root-import",
+    "@babel/transform-runtime"
+  ]
+}

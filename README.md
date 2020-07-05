@@ -1,7 +1,7 @@
 # Anchorific.js
 
 Anchorific is a jQuery plugin that automatically generates anchored headings and nested navigations based on header tags. My intention is for it to be used in single-page project documentation.
-Project page and demo here: [renaysha.me/anchorific-js](http://renaysha.me/anchorific-js)
+Project page and demo here: [https://anchorific.netlify.app/](https://anchorific.netlify.app/)
 
 ## Installation
 

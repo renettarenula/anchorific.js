@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Thailand" fill-rule="nonzero">
+            <polygon id="Shape" fill="#F4F5F8" points="0 0 640 0 640 480 0 480"></polygon>
+            <polygon id="Shape" fill="#2D2A4A" points="0 162.5 640 162.5 640 322.5 0 322.5"></polygon>
+            <path d="M0,0 L640,0 L640,82.5 L0,82.5 L0,0 Z M0,400 L640,400 L640,480 L0,480 L0,400 Z" id="Shape" fill="#A51931"></path>
+        </g>
+    </g>
+</svg>
