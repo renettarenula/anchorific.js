@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@babel/runtime": "^7.10.1",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "anchorific": "^0.1.2",
     "apollo-boost": "^0.4.9",
     "apollo-client": "^2.6.10",
     "apollo-link-schema": "^1.2.5",
@@ -16,7 +16,10 @@
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.3",
     "graphql-tools": "^6.0.1",
+    "i": "^0.3.6",
     "ichigoo": "^1.0.0",
+    "jquery": "^3.5.1",
+    "npm": "^6.14.5",
     "react": "^16.13.1",
     "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
@@ -38,12 +41,17 @@
     "babel-plugin-jsx-pragmatic": "^1.0.2",
     "babel-plugin-root-import": "^6.5.0",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "cssnano": "^4.1.10",
     "gh-pages": "^3.1.0"
+  },
+  "browser": {
+    "anchorific": "./node_modules/anchorific/src/anchorific.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "ichigoo build && gh-pages -d dist -b gh-pages",
-    "build": "NODE_ENV=production ichigoo build"
+    "build": "NODE_ENV=production ichigoo build",
+    "browser:dev": "browserify ./src/Anchorific.js --debug > ./src/assets/js/bundle.js"
   },
   "author": "Aysha Anggraini",
   "license": "ISC"
