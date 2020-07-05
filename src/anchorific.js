@@ -59,7 +59,7 @@ if ( typeof Object.create !== 'function' ) {
 			headers: 'h1, h2, h3, h4, h5, h6', // custom headers selector
 			speed: 200, // speed of sliding back to top
 			anchorClass: 'anchor', // class of anchor links
-			anchorText: '#', // prepended or appended to anchor headings
+			anchorText: '#', // prepended or appended to anchor headings. false removes anchors altogether
 			top: '.top', // back to top button or link class
 			spy: true, // scroll spy
 			position: 'append', // position of anchor text
@@ -140,6 +140,9 @@ if ( typeof Object.create !== 'function' ) {
 				obj.attr( 'id', name );
 
 			id = obj.attr( 'id' );
+
+			if (self.opt.anchorText === false)
+			  return;
 
 			anchor = $( '<a />' ).attr( 'href', '#' + id ).html( text ).addClass( klass );
 
