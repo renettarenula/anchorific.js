@@ -42,3 +42,14 @@ a:hover.anchor {
   display: block;
   margin-left: 10px;
 }
+
+@media (min-width: 1300px) {
+  a.anchor {
+    color: #0684f7;
+  }
+
+  .anchorific ul li a {
+    margin-bottom: 0px;
+    padding: 0;
+  }
+}
