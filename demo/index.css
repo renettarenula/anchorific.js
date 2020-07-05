@@ -1,0 +1,44 @@
+a.anchor {
+  text-decoration: none;
+  padding-left: 1%;
+  opacity: 0.5;
+  color: #7cb8ec;
+  font-weight: none;
+  font-size: 1em;
+}
+
+a:hover.anchor {
+  opacity: 1;
+}
+
+.anchorific ul {
+  list-style-type: none;
+}
+
+.anchorific li ul {
+  list-style-type: none;
+  display: none;
+}
+
+.anchorific ul li a {
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 5px;
+  color: #42a7ff;
+  margin-bottom: 10px;
+}
+
+.anchorific li ul {
+  display: none;
+}
+
+.anchorific li.active > a {
+  color: #7cb8ec;
+}
+
+.anchorific li.active > ul {
+  display: block;
+  margin-left: 10px;
+}

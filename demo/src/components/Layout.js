@@ -1,5 +1,5 @@
 // src/components/Layout.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { Global, css } from "@emotion/core";
 import Logo from "~/src/assets/Logo.svg";
@@ -70,6 +70,7 @@ const Layout = ({ children }) => {
         <Header>
           <Logo width="300px" />
         </Header>
+
         <main>{children}</main>
       </Wrapper>
     </div>
