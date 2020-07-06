@@ -20,13 +20,21 @@
     "jquery-plugin",
     "ecosystem:jquery"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "author": "renettarenula <ren.aysha@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/renettarenula/anchorific/issues"
   },
   "devDependencies": {
+    "husky": "^4.2.5",
     "node-qunit-phantomjs": "^2.1.1",
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1",
     "qunit": "^2.10.1",
     "uglify-js": "^3.10.0"
   }
