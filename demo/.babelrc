@@ -24,6 +24,12 @@
       }
     ],
     "babel-plugin-root-import",
-    "@babel/transform-runtime"
+    "@babel/transform-runtime",
+    [
+      "prismjs",
+      {
+        "languages": ["javascript", "css", "markup", "bash"]
+      }
+    ]
   ]
 }
