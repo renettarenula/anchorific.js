@@ -159,20 +159,32 @@ The speed of the scrolling effect can be adjusted by specifying it in the option
 
 ## Build
 
-Anchorific.js uses Grunt CLI via NodeJS for linting, providing minified of production file, and executing the unit tests of the plugin. Check out the guide on [Grunt's getting started page](http://gruntjs.com/getting-started) to install it.
+Anchorific.js good old npm scripts to run test and build the code.
+
+Run test:
+
+```bash
+$ npm test
+```
+
+Build code:
+
+```bash
+$ npm run build
+```
 
 ### Setup
 
-Once you have grunt CLI installed, CD to the project folder and type:
+CD to the project folder and type:
 
 ```bash
 $ npm install
 ```
 
-Execute lint, minification, and unit tests:
+Run test
 
 ```bash
-$ grunt
+npm test
 ```
 
 ## License
