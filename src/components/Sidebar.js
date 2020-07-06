@@ -61,7 +61,7 @@ const P = styled.p`
   }
 `;
 
-const Content = styled.p`
+const Content = styled.div`
   margin-top: 20px;
 `;
 
