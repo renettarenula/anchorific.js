@@ -51,6 +51,11 @@ if (typeof Object.create !== 'function') {
       }
 
       self.build();
+
+      for (var i = 0; i < self.opt.navElements.length; i++) {
+        var nav = self.opt.navElements[i];
+        $(self.opt.navigation).children().clone(true).appendTo(nav);
+      }
     },
 
     opt: {
@@ -63,6 +68,7 @@ if (typeof Object.create !== 'function') {
       spy: true, // scroll spy
       position: 'append', // position of anchor text
       spyOffset: !0, // specify heading offset for spy scrolling
+      navElements: [], // if there are other elements that should act as navigation, add classes here
     },
 
     build: function () {

@@ -15,6 +15,7 @@
       <h1>Scroll Down</h1>
     </header>
     <div class="anchorific"></div>
+    <div class="anchorific-2"></div>
     <div class="content">
       <h1>The Lannisters</h1>
       <h2>Tywin Lannister</h2>
@@ -371,10 +372,10 @@
     <script src="min/anchorific.min.js"></script>
     <!-- Needed for unit test -->
     <script type="text/javascript">
-      var c = $(".content").anchorific(),
-        ashara = $("h6#ashara-dayne");
+      var c = $('.content').anchorific({ navElements: ['.anchorific-2'] }),
+        ashara = $('h6#ashara-dayne');
 
-      $("html, body").animate(
+      $('html, body').animate(
         {
           scrollTop: ashara.offset().top,
         },
