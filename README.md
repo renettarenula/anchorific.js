@@ -160,7 +160,7 @@ The speed of the scrolling effect can be adjusted by specifying it in the option
 
 ## Build
 
-Anchorific.js good old npm scripts to run test and build the code.
+Anchorific.js uses good old npm scripts to run test and build the code.
 
 Run test:
 
