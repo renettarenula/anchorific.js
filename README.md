@@ -124,22 +124,23 @@ You can also check the [demo](http://renaysha.me/anchorific-js) page's CSS to se
 Use the selector where your headings are located under. And then just call the anchorific method.
 
 ```javascript
-$(".content").anchorific();
+$('.content').anchorific();
 ```
 
 You can call the plugin function with any selector you want as long as it adhere to the HTML structure mentioned above. Options available are as followed:
 
 ```javascript
-$(".content").anchorific({
-  navigation: ".anchorific", // position of navigation
-  headers: "h1, h2, h3, h4, h5, h6", // headers that you wish to target
+$('.content').anchorific({
+  navigation: '.anchorific', // position of navigation
+  headers: 'h1, h2, h3, h4, h5, h6', // headers that you wish to target
   speed: 200, // speed of sliding back to top
-  anchorClass: "anchor", // class of anchor links
-  anchorText: "#", // prepended or appended to anchor headings
-  top: ".top", // back to top button or link class
+  anchorClass: 'anchor', // class of anchor links
+  anchorText: '#', // prepended or appended to anchor headings
+  top: '.top', // back to top button or link class
   spy: true, // scroll spy
-  position: "append", // position of anchor text
+  position: 'append', // position of anchor text
   spyOffset: 0, // specify heading offset for spy scrolling
+  navElements: [], // if there are other elements that should act as navigation, add classes here
 });
 ```
 
@@ -159,21 +160,37 @@ The speed of the scrolling effect can be adjusted by specifying it in the option
 
 ## Build
 
-Anchorific.js uses Grunt CLI via NodeJS for linting, providing minified of production file, and executing the unit tests of the plugin. Check out the guide on [Grunt's getting started page](http://gruntjs.com/getting-started) to install it.
+Anchorific.js good old npm scripts to run test and build the code.
+
+Run test:
+
+```bash
+$ npm test
+```
+
+Build code:
+
+```bash
+$ npm run build
+```
 
 ### Setup
 
-Once you have grunt CLI installed, CD to the project folder and type:
+CD to the project folder and type:
 
 ```bash
 $ npm install
 ```
 
-Execute lint, minification, and unit tests:
+Run test
 
 ```bash
-$ grunt
+npm test
 ```
+
+## Contributing
+
+In order to contribute, open a pull request and ensure that new tests are written in order to test out your contributions. Ensure that previous test pass by running `npm test`. Running `/tests/index.html` directly in the browser will show you some failed tests but this is because those tests are testing the scroll functionality which it doesn't support. Running `npm test` is more reliable.
 
 ## License
 

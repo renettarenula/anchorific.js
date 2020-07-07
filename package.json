@@ -2,9 +2,10 @@
   "name": "anchorific",
   "version": "0.1.2",
   "description": "Automatically generate anchored headings and nested navigations based on header tags",
-  "main": "anchorific.js",
+  "main": "./src/anchorific.js",
   "scripts": {
-    "test": "echo \"No test specified\""
+    "test": "node-qunit-phantomjs ./tests/index.html",
+    "build": "uglifyjs ./src/anchorific.js -o ./min/anchorific.min.js --mangle"
   },
   "repository": {
     "type": "git",
@@ -19,17 +20,22 @@
     "jquery-plugin",
     "ecosystem:jquery"
   ],
-  "author": "renettarenula <ren.aysha@gmail.com>",
-  "license": "MIT ",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "author": "renettarenula <ayshaa@hey.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/renettarenula/anchorific/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-connect": "^0.8.0",
-    "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-qunit": "0.3.0",
-    "grunt-contrib-uglify": "~0.2.2"
+    "husky": "^4.2.5",
+    "node-qunit-phantomjs": "^2.1.1",
+    "prettier": "2.0.5",
+    "pretty-quick": "^2.0.1",
+    "qunit": "^2.10.1",
+    "uglify-js": "^3.10.0"
   }
 }
