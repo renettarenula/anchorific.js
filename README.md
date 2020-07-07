@@ -25,4 +25,12 @@ ichigoo build
 ichigoo serve
 ```
 
+To build Anchorific.js file, run:
+
+```
+npm run browser:dev
+```
+
+This is important every time we update anchorific version.
+
 This is deployed with Netlify Drop so it is not automated.

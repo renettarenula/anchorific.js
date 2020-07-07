@@ -11,16 +11,19 @@ a:hover.anchor {
   opacity: 1;
 }
 
-.anchorific ul {
+.anchorific ul,
+.sidebar-anchorific ul {
   list-style-type: none;
 }
 
-.anchorific li ul {
+.anchorific li ul,
+.sidebar-anchorific li ul {
   list-style-type: none;
   display: none;
 }
 
-.anchorific ul li a {
+.anchorific ul li a,
+.sidebar-anchorific ul li a {
   display: block;
   font-family: "Lato", sans-serif;
   font-weight: 700;
@@ -30,15 +33,18 @@ a:hover.anchor {
   margin-bottom: 10px;
 }
 
-.anchorific li ul {
+.anchorific li ul,
+.sidebar-anchorific li ul {
   display: none;
 }
 
-.anchorific li.active > a {
+.anchorific li.active > a,
+.sidebar-anchorific li.active > a {
   color: #7cb8ec;
 }
 
-.anchorific li.active > ul {
+.anchorific li.active > ul,
+.sidebar-anchorific li.active > ul {
   display: block;
   margin-left: 10px;
 }
@@ -48,7 +54,8 @@ a:hover.anchor {
     color: #0684f7;
   }
 
-  .anchorific ul li a {
+  .anchorific ul li a,
+  .sidebar-anchorific ul li a {
     margin-bottom: 0px;
     padding: 0;
   }
