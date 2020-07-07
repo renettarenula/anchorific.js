@@ -5,7 +5,6 @@ import styled from "@emotion/styled";
 import Heart from "~/src/assets/Heart.svg";
 import Thai from "~/src/assets/Thai.svg";
 import Malaysia from "~/src/assets/Malaysia.svg";
-import { useMedia } from "react-use";
 import StaticContent from "../components/StaticContent.js";
 import Prism from "prismjs";
 
@@ -109,7 +108,6 @@ const SmallIcon = styled.i`
 `;
 
 const Index = () => {
-  const isWide = useMedia("(min-width: 1300px)");
   return (
     <Layout>
       <StaticContent>
