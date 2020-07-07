@@ -1,6 +1,6 @@
 # Anchorific demo
 
-It can be found at `https://anchorific.netlify.app/`
+It can be found at `https://anchorific.netlify.app/`. Netlify will deploy this branch.
 
 # Development
 
@@ -32,5 +32,3 @@ npm run browser:dev
 ```
 
 This is important every time we update anchorific version.
-
-This is deployed with Netlify Drop so it is not automated.
