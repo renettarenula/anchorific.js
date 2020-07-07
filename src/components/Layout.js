@@ -125,7 +125,7 @@ const Layout = ({ children }) => {
             <Anchorific width="300px" />
           </Header>
         </HeaderStuff>
-        )
+
         <SideItem>
           <Header>
             <Anchorific width="200px" />
