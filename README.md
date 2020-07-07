@@ -140,6 +140,7 @@ $('.content').anchorific({
   spy: true, // scroll spy
   position: 'append', // position of anchor text
   spyOffset: 0, // specify heading offset for spy scrolling
+  navElements: [], // if there are other elements that should act as navigation, add classes here
 });
 ```
 
