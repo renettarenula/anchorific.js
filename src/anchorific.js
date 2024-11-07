@@ -34,6 +34,8 @@ if (typeof Object.create !== 'function') {
   'use strict';
 
   var Anchorific = {
+    // array of unique slug names
+    names: [],
     init: function (options, elem) {
       var self = this;
 
@@ -86,8 +88,9 @@ if (typeof Object.create !== 'function') {
 
       for (var i = 0; i < self.headers.length; i++) {
         obj = self.headers.eq(i);
-        navigations(obj);
         self.anchor(obj);
+        navigations(obj);
+        self.anchorLinks(obj);
       }
 
       if (self.opt.spy) self.spy();
@@ -151,20 +154,39 @@ if (typeof Object.create !== 'function') {
     anchor: function (obj) {
       var self = this,
         name = self.name(obj),
-        anchor,
-        text = self.opt.anchorText,
-        klass = self.opt.anchorClass,
+        num = 1,
         id;
 
-      if (obj.attr('id') === undefined) obj.attr('id', name);
+      // Set initial ID if none exists
+      if (obj.attr('id') === undefined) {
+        id = name;
+      } else {
+        id = obj.attr('id');
+      }
 
-      id = obj.attr('id');
+      // Ensure ID uniqueness
+      while ($.inArray(id, self.names) >= 0) {
+        id = name + '-' + num;
+        num++;
+      }
 
-      anchor = $('<a />')
+      obj.attr('id', id);
+      self.names.push(id);
+    },
+
+    anchorLinks: function (obj) {
+      var self = this,
+        text = self.opt.anchorText,
+        klass = self.opt.anchorClass,
+        id = obj.attr('id');
+
+      // Create anchor element
+      var anchor = $('<a />')
         .attr('href', '#' + id)
         .html(text)
         .addClass(klass);
 
+      // Insert anchor based on position setting
       if (self.opt.position === 'append') {
         obj.append(anchor);
       } else {
